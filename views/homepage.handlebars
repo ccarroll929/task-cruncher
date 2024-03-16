@@ -1,0 +1,36 @@
+<section>
+    <div class="row align-items-center" id="homepage-header">
+        <h2>Hello, <span>{{username}}!</span></h2>
+        <p>Add a new task or edit your tasks below</p> 
+    </div>
+<br>
+<div class="btn-container">                      
+    <button class="homepage-button" id="newtask" type="submit" class="btn"><a href="/homepage/new" id="a-add-btn"><i class="bi bi-plus-square"></i> Add Task</a></button>
+</div>
+{{#if tasks.length}}
+{{#each tasks as |task|}}
+<div class="task-container">
+        <input type="hidden" name="task-id" value="{{task.id}}"/>
+    <div class="card">
+        <h2 class="card-title"><span>{{username}}</span>'s Task List</h2>
+        <div class="card-header">
+            <a class="link" href="/task/{{task.id}}">{{task.title}}</a>
+        </div>
+    </div>   
+</div>
+</section>
+{{/each}}   
+{{/if}}
+<div class="wrapper">
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        </div>
+<script src="js/deletetask.js"></script>
+
